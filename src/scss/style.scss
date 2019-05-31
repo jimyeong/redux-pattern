@@ -1,0 +1,53 @@
+@function pxToRem($size) {
+  @return $size / 16 * 1rem;
+}
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+html {
+  font-size: 4.444vw;
+}
+.Header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: pxToRem(1) pxToRem(5);
+  width: 100%;
+  height: pxToRem(40);
+  background-color: #078c;
+  color: #fff;
+}
+.SideBar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  transform: translateX(-100%);
+  background-color: rgb(81, 172, 108);
+  transition: all 0.6s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  &.isSideBarOpen {
+    transform: none;
+  }
+}
+.btn {
+  width: pxToRem(30);
+  height: pxToRem(30);
+  background-color: #e8e8e8;
+  border-radius: 50%;
+  transition: all 0.4s linear;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: #fff;
+}
